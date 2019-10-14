@@ -1,0 +1,47 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<link rel="stylesheet" type="text/css" media="all"
+	href="../static/css/style.css" th:href="@{/css/style.css}" />
+
+<style  th:inline="text">
+body {
+	background-color: #DEB887;
+}
+</style>
+
+<title>VisualPeT</title>
+</head>
+<body>
+
+<div class="header">
+<div>
+Visual<span>PeT</span>
+</div>
+</div>
+	
+		<form th:action="@{/login}" method="post">
+		<div class="login">
+			<div th:if="${param.error}" class="msg alerta">Login ou usuário
+				é invalido.</div>
+			<div th:if="${param.logout}" class="msg ok">Você saiu com
+				sucesso.</div>
+
+			<input type="text" id="username" name="username"
+				placeholder="Usuário" autofocus="autofocus" required="required" />
+			<input type="password" id="password" name="password"
+				placeholder="Senha" /> <input type="submit" id="botao"
+				value="Entrar"/>
+
+		</div>
+	</form>
+
+
+
+
+
+</body>
+</html>
